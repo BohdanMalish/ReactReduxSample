@@ -7,6 +7,8 @@ import { Result } from "../../store/Games/reducer";
 
 import { Row } from "./Row";
 
+import styles from './index.module.css'
+
 export function Table() {
   const teams = useSelector(teamsSelector);
   const games = useSelector(gamesSelector);
@@ -45,7 +47,7 @@ export function Table() {
   }, [games,teams]);
 
   return (
-    <table>
+    <table className={styles.Table}>
       <tr>
         <th>Place</th>
         <th>Team</th>
@@ -55,9 +57,11 @@ export function Table() {
         <th>Lost</th>
         <th>Points</th>
       </tr>
+      <tbody>
       {dataTable.map((i, index) => (
         <Row data={i} place={index + 1} key={index} />
       ))}
+      </tbody>
     </table>
   );
 }

@@ -1,0 +1,27 @@
+.Table {
+  background-color: lightgray;
+  border: 1px solid;
+  min-height: 200px;
+  margin: 0 auto;
+  width: 500px;
+  border-collapse: collapse;
+  margin-bottom: 100px;
+}
+
+.Table th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+.Table td {
+ padding: 20px;
+}
+.Table th{
+    background-color: aliceblue;
+}
+.Table tr:first-child{
+    background-color: greenyellow;
+}
+.Table tr:last-child{
+    background-color: rosybrown;
+}

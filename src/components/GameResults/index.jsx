@@ -8,6 +8,8 @@ import { updateData } from "../../store/Games/actions";
 
 import GameResult from "./GameResult";
 
+import styles from './index.module.css'
+
 export function GameResults() {
   const dispatch = useDispatch();
 
@@ -24,8 +26,8 @@ export function GameResults() {
     } else if (teams.length >= 2) {
       let tempTeams = teams;
       const arr = [];
-      teams.map((i) => {
-        tempTeams.map((j) => {
+      teams.forEach((i) => {
+        tempTeams.forEach((j) => {
           if (j.id !== i.id) {
             arr.push({
               idFirst: i.id,
@@ -43,10 +45,10 @@ export function GameResults() {
     }
   }
   return (
-    <div>
+    <div className={styles.ListGames}>
       {games.length ? (
         games.map((i, index) => {
-          return <GameResult data={i} />;
+          return <GameResult data={i} key={index} />;
         })
       ) : (
         <>No one games yet</>

@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setGoalsValue } from "../../store/Games/actions";
 import { teamsSelector } from "../../store/Teams/selector";
 import { Result } from "../../store/Games/reducer";
+import styles from './index.module.css'
 
 function GameResult({ data }) {
   const dispatch = useDispatch();
@@ -40,18 +41,24 @@ function GameResult({ data }) {
   }, [scoreFirst, scoreSecond]);
 
   return (
-    <div>
+    <div className={styles.ResultGames}>
       <span>{getInfoByID(idFirst).teamName}</span>
       <input
         value={scoreFirst}
+        type={"number"}
         onChange={(e) => {
-          setScoreFirst(e.target.value);
+          if (e.target.value >= 0) {
+            setScoreFirst(e.target.value);
+          }
         }}
       ></input>
       <input
         value={scoreSecond}
+        type={"number"}
         onChange={(e) => {
-          setScoreSecond(e.target.value);
+          if (e.target.value >= 0) {
+            setScoreSecond(e.target.value);
+          }
         }}
       ></input>
       <span>{getInfoByID(idSecond).teamName}</span>
