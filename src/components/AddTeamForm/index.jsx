@@ -14,7 +14,7 @@ function AddTeamForm() {
         onChange={(e) => setTeamName(e.target.value)}
         placeholder="Team Name"
       ></input>
-      <button onClick={() => dispatch(addTeam(teamName))}>Add</button>
+      <button onClick={() => {if(teamName){dispatch(addTeam(teamName))}}}>Add</button>
     </div>
   );
 }

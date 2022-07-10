@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { gamesSelector } from "../../store/Games/selector";
 import { teamsSelector } from "../../store/Teams/selector";
 import { Result } from "../../store/Games/reducer";
-import { updateData } from "../../store/Games/actions";
+import { updateDataGames } from "../../store/Games/actions";
 
 import GameResult from "./GameResult";
 
@@ -17,7 +17,7 @@ export function GameResults() {
   const games = useSelector(gamesSelector);
 
   useEffect(() => {
-    dispatch(updateData(generateGames()));
+    dispatch(updateDataGames(generateGames()));
   }, [teams]);
 
   function generateGames() {

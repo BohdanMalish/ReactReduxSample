@@ -1,6 +1,6 @@
 import { UPDATE_DATA, SET_SCORE } from './constants';
 
-export const updateData = (data) => ({
+export const updateDataGames = (data) => ({
   type: UPDATE_DATA,
   payload: data
 });

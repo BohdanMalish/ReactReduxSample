@@ -10,6 +10,7 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case UPDATE_DATA:
+      localStorage.setItem('games',JSON.stringify(action.payload))
       return {
         data: action.payload,
       };
@@ -24,6 +25,7 @@ const reducer = (state = initialState, action) => {
           return i;
         }
       });
+      localStorage.setItem('games',JSON.stringify(newData))
       return {
         data: newData,
       };
